@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'OpenSans-Regular';
+    src: url('assets/fonts/OpenSans/OpenSans-Regular.ttf');
+}
+
+* {
+    box-sizing: border-box;
+}
+body {
+    font-size: 16px;
+    font-family: 'OpenSans-Regular', sans-serif;
+    color: #333333;
+    max-width: 1440px;
+    margin: 0;
+}
+.noul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.noul li {
+    margin: 0;
+    padding: 1em;
+    border-bottom: 1px solid #ebebeb;
+}
+.noul li:last-child {
+    border: none;
+}
+.hide {
+    display: none !important;
+}
+.error {
+    font-size: 0.85em;
+    color: #911;
+}
