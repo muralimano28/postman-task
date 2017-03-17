@@ -2,7 +2,6 @@
     font-family: 'OpenSans-Regular';
     src: url('assets/fonts/OpenSans/OpenSans-Regular.ttf');
 }
-
 * {
     box-sizing: border-box;
 }
@@ -12,6 +11,29 @@ body {
     color: #333333;
     max-width: 1440px;
     margin: 0;
+}
+body.no-scroll {
+  overflow: hidden;
+}
+.link {
+  cursor: pointer;
+}
+.button {
+  border: none;
+  background: transparent;
+  margin: 8px 12px;
+  outline: none;
+  cursor: pointer;
+}
+.button__compose-btn {
+
+}
+.button__option-btn {
+
+}
+.input {
+  border: none;
+  outline: none;
 }
 .noul {
     list-style: none;

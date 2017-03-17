@@ -6,21 +6,21 @@ const groups = {
       avatar: '',
       recipients: [
         {
-          id: '0a1b2c3d4e',
+          id: '6876543210',
           name: 'Joey Tribbiani',
         },
         {
-          id: '1a2b3c4d5e',
+          id: '7876543210',
           name: 'Chandler Bing',
         },
         {
-          id: '2a3b4c5d6e',
+          id: '3876543210',
           name: 'Ross Geller',
         },
       ],
-      admins: ['0a1b2c3d4e', '3a4b5c6d7e'],
+      admins: ['6876543210', '5876543210'],
       created_on: '1489592631627',
-      created_by: '0a1b2c3d4e',
+      created_by: '6876543210',
     },
     {
       id: '7a8b9c0d1e',
@@ -28,33 +28,33 @@ const groups = {
       avatar: '',
       recipients: [
         {
-          id: '0a1b2c3d4e',
+          id: '6876543210',
           name: 'Joey Tribbiani',
         },
         {
-          id: '1a2b3c4d5e',
+          id: '7876543210',
           name: 'Chandler Bing',
         },
         {
-          id: '2a3b4c5d6e',
+          id: '3876543210',
           name: 'Ross Geller',
         },
         {
-          id: '3a4b5c6d7e',
+          id: '5876543210',
           name: 'Monica Geller',
         },
         {
-          id: '4a5b6c7d8e',
+          id: '4876543210',
           name: 'Phoebe Buffay',
         },
         {
-          id: '5a6b7c8d9e',
+          id: '2876543210',
           name: 'Rachel Green',
         },
       ],
-      admins: ['1a2b3c4d5e', '3a4b5c6d7e'],
+      admins: ['7876543210', '5876543210'],
       created_on: '1489592912505',
-      created_by: '3a4b5c6d7e',
+      created_by: '5876543210',
     },
   ],
 };

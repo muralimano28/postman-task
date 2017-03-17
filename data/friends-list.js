@@ -1,31 +1,31 @@
 const friendsList = {
   friends_list: [
     {
-      id: '1a2b3c4d5e',
+      id: '7876543210',
       name: 'Chandler Bing',
       avatar: '',
     },
     {
-      id: '2a3b4c5d6e',
+      id: '3876543210',
       name: 'Ross Geller',
       avatar: '',
     },
     {
-      id: '3a4b5c6d7e',
+      id: '5876543210',
       name: 'Monica Geller',
       avatar: '',
     },
     {
-      id: '4a5b6c7d8e',
+      id: '4876543210',
       name: 'Phoebe Buffay',
       avatar: '',
     },
     {
-      id: '5a6b7c8d9e',
+      id: '2876543210',
       name: 'Rachel Green',
       avatar: '',
     },
-  ]
+  ],
 };
 
 export default friendsList;

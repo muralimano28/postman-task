@@ -1,0 +1,24 @@
+.header {
+  height: 56px;
+  background: #eeeeee;
+  padding: 8px;
+}
+.header__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
+  width: 10%;
+}
+.header__avatar_img {
+  width: 100%;
+  height: auto;
+}
+.header__controls {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: right;
+  width: 90%;
+}

@@ -1,0 +1,23 @@
+.compose {
+  position: relative;
+}
+.list {
+  margin-top: 158px;
+}
+.compose__search-box {
+  position: fixed;
+  height: 50px;
+  top: 108px;
+  right: 0;
+  left: 0;
+  width: 450px;
+}
+.list__button {
+}
+.compose__error-msg {
+  padding: 24px 0;
+  text-align: center;
+  font-size: 14px;
+  line-height: 20px;
+  color: #929fa6;
+}

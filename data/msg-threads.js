@@ -1,9 +1,9 @@
 const msgThreads = {
   threads: {
-    '3a4b5c6d7e': [
+    5876543210: [
       {
         id: '8a9b0c1d2e',
-        sender: '0a1b2c3d4e',
+        sender: '6876543210',
         content: 'Hi Monica',
         type: 'text',
         ref: null,
@@ -13,7 +13,7 @@ const msgThreads = {
       },
       {
         id: '9a0b1c2d3e',
-        sender: '3a4b5c6d7e',
+        sender: '5876543210',
         content: 'Hello Joey',
         type: 'text',
         ref: '8a9b0c1d2e',
@@ -23,7 +23,7 @@ const msgThreads = {
       },
       {
         id: '0f1g2h3i4j',
-        sender: '0a1b2c3d4e',
+        sender: '6876543210',
         content: 'https://someimage.com',
         type: 'image',
         ref: null,
@@ -33,7 +33,7 @@ const msgThreads = {
       },
       {
         id: '1f2g3h4i5j',
-        sender: '3a4b5c6d7e',
+        sender: '5876543210',
         content: 'Ha ha ha ha.. :-)',
         type: 'text',
         ref: '0f1g2h3i4j',
@@ -42,7 +42,7 @@ const msgThreads = {
       },
       {
         id: '2f3g4h5i6j',
-        sender: '3a4b5c6d7e',
+        sender: '5876543210',
         content: 'Where did you get this?',
         type: 'text',
         ref: null,
@@ -50,10 +50,10 @@ const msgThreads = {
         delivered_at: '1489595129791',
       },
     ],
-    '5a6b7c8d9e': [
+    2876543210: [
       {
         id: '3f4g5h6i7j',
-        sender: '0a1b2c3d4e',
+        sender: '6876543210',
         content: 'Hi Rachel',
         type: 'text',
         ref: null,
@@ -63,7 +63,7 @@ const msgThreads = {
       },
       {
         id: '4f5g6h7i8j',
-        sender: '0a1b2c3d4e',
+        sender: '6876543210',
         content: 'How are you?',
         type: 'text',
         ref: null,
@@ -72,7 +72,7 @@ const msgThreads = {
       },
       {
         id: '5f6g7h8i9j',
-        sender: '0a1b2c3d4e',
+        sender: '6876543210',
         content: 'What are you doing?',
         type: 'text',
         ref: null,

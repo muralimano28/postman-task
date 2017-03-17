@@ -1,6 +1,10 @@
 import React from 'react';
 import { render } from 'react-dom';
 
+// Styles
+import './normalize.min.css';
+import './default.css';
+
 import App from './containers';
 
 render(<App />, document.getElementById('root'));

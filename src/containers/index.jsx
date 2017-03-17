@@ -1,14 +1,43 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-/*
-* Importing default styles which is required for whole app.
-*/
+// Styles
+import './style.css';
 
-import '../normalize.min.css';
-import '../default.css';
+// Store
+import Store from '../store';
 
-const App = () => (
-  <h1>I am main page</h1>
-);
+// Other containers
+import Sidebar from './sidebar';
+import Content from './content';
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = Store.getState();
+    this.unSubscribe = null;
+  }
+  componentDidMount() {
+    this.unSubscribe = Store.subscribe(this.updateStateFromStore);
+  }
+  componentWillUnmount() {
+    if (this.unSubscribe) this.unSubscribe();
+  }
+  updateStateFromStore = () => {
+    this.setState(Store.getState);
+  }
+  render() {
+    return (
+      <section>
+        <Sidebar
+          {...this.state}
+        />
+        <Content
+          {...this.state}
+        />
+      </section>
+    );
+  }
+}
 
 export default App;
