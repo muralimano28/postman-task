@@ -1,18 +1,18 @@
 .compose {
   position: relative;
 }
-.list {
-  margin-top: 158px;
+.compose__contact-list {
+  /*margin-top: 158px;*/
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 .compose__search-box {
-  position: fixed;
+  /*position: fixed;*/
   height: 50px;
-  top: 108px;
+  /*top: 108px;
   right: 0;
   left: 0;
-  width: 450px;
-}
-.list__button {
+  width: 450px;*/
 }
 .compose__error-msg {
   padding: 24px 0;

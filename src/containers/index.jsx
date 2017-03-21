@@ -28,7 +28,7 @@ class App extends Component {
   }
   render() {
     return (
-      <section>
+      <section className="application">
         <Sidebar
           {...this.state}
         />

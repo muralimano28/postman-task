@@ -1,19 +1,33 @@
 @font-face {
-    font-family: 'OpenSans-Regular';
-    src: url('assets/fonts/OpenSans/OpenSans-Regular.ttf');
+  font-family: 'OpenSans-Regular';
+  src: url('assets/fonts/OpenSans/OpenSans-Regular.ttf');
+}
+@font-face {
+  font-family: 'OpenSans-Light';
+  src: url('assets/fonts/OpenSans/OpenSans-Light.ttf');
 }
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 body {
-    font-size: 16px;
-    font-family: 'OpenSans-Regular', sans-serif;
-    color: #333333;
-    max-width: 1440px;
-    margin: 0;
+  font-size: 16px;
+  font-family: 'OpenSans-Regular', sans-serif;
+  color: #333333;
+  max-width: 1440px;
+  margin: 0;
 }
 body.no-scroll {
   overflow: hidden;
+}
+img {
+  width: 100%;
+  height: auto;
+}
+.icon {
+  display: inline-block;
+  background-position: center center;
+  background-size: contain;
+  vertical-align: middle;
 }
 .link {
   cursor: pointer;
@@ -24,34 +38,48 @@ body.no-scroll {
   margin: 8px 12px;
   outline: none;
   cursor: pointer;
+  font-family: 'OpenSans-Regular', sans-serif;
+
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.button__compose-btn,
+.button__option-btn,
+.button__back-btn {
+  height: 20px;
+  width: 20px;
 }
 .button__compose-btn {
-
+  background-image: url('./assets/icons/message.svg');
 }
 .button__option-btn {
-
+  background-image: url('./assets/icons/option.svg');
+}
+.button__back-btn {
+  background-image: url('./assets/icons/back-white.svg');
 }
 .input {
   border: none;
   outline: none;
 }
 .noul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-.noul li {
-    margin: 0;
-    padding: 1em;
-    border-bottom: 1px solid #ebebeb;
+.list {
+  margin: 0;
+  padding: 1em;
+  border-bottom: 1px solid #ebebeb;
 }
-.noul li:last-child {
-    border: none;
+.list:last-child {
+  border: none;
 }
 .hide {
-    display: none !important;
+  display: none !important;
 }
 .error {
-    font-size: 0.85em;
-    color: #911;
+  font-size: 0.85em;
+  color: #911;
 }

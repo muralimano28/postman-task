@@ -7,9 +7,11 @@ class SearchBox extends Component {
     value: PropTypes.string.isRequired,
     onInputChange: PropTypes.func.isRequired,
     placeholder: PropTypes.string,
+    className: PropTypes.string,
   };
   static defaultProps = {
     placeholder: 'Search here',
+    className: '',
   };
   state = {
     isInputFocused: false,
@@ -22,23 +24,23 @@ class SearchBox extends Component {
     });
   }
   render() {
-    const { value, onInputChange, placeholder } = this.props;
+    const { value, onInputChange, placeholder, className } = this.props;
     const { isInputFocused } = this.state;
 
     return (
-      <section className="search-box compose__search-box">
+      <section className={`search-box ${className}`}>
         <div className={`search-box__wrapper ${(isInputFocused) ? 'search-box__wrapper_focused' : ''}`}>
           {
             (isInputFocused) ? (
               <button
                 className="button search-box__back-btn"
                 onClick={() => { this.setState({ isInputFocused: false }); onInputChange(''); }}
-              >B</button>
+              />
             ) : (
               <button
                 className="button search-box__search-btn"
                 onClick={this.focusInput}
-              >S</button>
+              />
             )
           }
           {
@@ -58,8 +60,8 @@ class SearchBox extends Component {
             (
               <button
                 className="button search-box__clear-btn"
-                onClick={() => { this.setState({ isInputFocused: false }); onInputChange(''); }}
-              >C</button>
+                onClick={() => { this.focusInput(); onInputChange(''); }}
+              />
             )
           }
         </div>

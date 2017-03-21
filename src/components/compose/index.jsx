@@ -3,6 +3,8 @@ import React, { Component, PropTypes } from 'react';
 import SearchBox from '../search-box';
 import './style.css';
 
+import { subscribeToOnResize } from '../../utils';
+
 export default class Compose extends Component {
   constructor(props) {
     super(props);
@@ -10,11 +12,28 @@ export default class Compose extends Component {
     this.state = {
       searchText: '',
     };
+    this.contentListDom = null;
+    this.unSubscribeFromOnResize = null;
   }
+  componentDidMount() {
+    this.unSubscribeFromOnResize = subscribeToOnResize.addListener(this.onWindowResize);
+  }
+  componentWillUnmount() {
+    this.unSubscribeFromOnResize();
+  }
+
   onChangeHandler = (value) => {
     this.setState({
       searchText: value,
     });
+  }
+  onWindowResize = () => {
+    const domNode = this.contentListDom || document.getElementById('compose-contact-list');
+
+    if (domNode) {
+      // Window's height - (height of header (108) - height of search bar (50))
+      domNode.style.height = `${(window.innerHeight - 158)}px`;
+    }
   }
   getFilteredContacts = () => {
     const { searchText } = this.state;
@@ -24,7 +43,7 @@ export default class Compose extends Component {
 
     for (let i = 0; i < alphabets.length; i += 1) {
       contactList[alphabets[i]] = contacts[alphabets[i]].filter(
-        contact => contact.name.toLowerCase().search(searchText) >= 0,
+        contact => contact.name.toLowerCase().search(searchText.toLowerCase()) >= 0,
       );
     }
     return contactList;
@@ -36,9 +55,9 @@ export default class Compose extends Component {
 
     for (let i = 0; i < alphabets.length; i += 1) {
       const list = contacts[alphabets[i]].map(contact => (
-        <li key={contact.phone}>
+        <li className="list" key={contact.phone}>
           <button
-            className="button list__button"
+            className="button compose__contact-list_button"
             id={contact.phone}
             onClick={(ev) => { contactSelectCB(ev.target.id); }}
           >{contact.name}</button>
@@ -47,7 +66,9 @@ export default class Compose extends Component {
 
       if (list.length) {
         contactList.push(
-          <li key={`contact-${alphabets[i]}`}><h2 className="list__header">{alphabets[i]}</h2></li>,
+          (<li className="list" key={`contact-${alphabets[i]}`}>
+            <h2 className="compose__contact-list_header">{alphabets[i]}</h2>
+          </li>),
           list,
         );
       }
@@ -59,6 +80,7 @@ export default class Compose extends Component {
       <p className="compose__error-msg">No contacts found</p>
     );
   }
+
   render() {
     const { searchText } = this.state;
 
@@ -69,8 +91,13 @@ export default class Compose extends Component {
         <SearchBox
           value={searchText}
           onInputChange={this.onChangeHandler}
+          className="compose__search-box"
         />
-        <ul className="noul list">
+        <ul
+          id="compose-contact-list"
+          className="noul compose__contact-list"
+          style={{ height: `${window.innerHeight - 158}px` }}
+        >
           { this.renderContacts(filteredList) }
         </ul>
       </div>

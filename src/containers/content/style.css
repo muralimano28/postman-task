@@ -1,4 +1,34 @@
 .content {
-  display: inline-block;
-  vertical-align: top;
+  /*display: inline-block;*/
+  /*vertical-align: top;*/
+  flex: 2;
+  background: #f8f9fb;
+}
+.intro {
+  height: 100vh;
+  border-bottom: 5px solid #58e870;
+}
+.intro-img {
+  width: 100%;
+  height: 337px;
+  background-image: url('../../assets/images/intro-image.jpeg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  margin-top: 4em;
+}
+.intro-title {
+  color: #4b5961;
+  font-size: 36px;
+  font-family: 'OpenSans-Light', 'OpenSans-Regular', sans-serif;
+  text-align: center;
+  margin-top: 38px;
+}
+.intro-text {
+  font-size: 14px;
+  color: #929fa6;
+  line-height: 20px;
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
 }

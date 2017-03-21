@@ -1,0 +1,26 @@
+.content__footer {
+  display: flex;
+  background-color: #f5f1ee;
+  min-height: 62px;
+}
+.content__footer_input-cont {
+  flex: 1;
+  margin-top: 0.75em;
+  position: relative;
+}
+.content__footer_placeholder {
+  position: absolute;
+  left: 0;
+  position: absolute;
+  color: #a4a4a4;
+  font-size: 14px;
+  top: 2px;
+  cursor: text;
+  font-weight: 100;
+}
+.content__footer_input {
+  width: 100%;
+  height: 40px;
+  padding: 8px 16px;
+  border-radius: 5px;
+}

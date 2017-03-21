@@ -1,0 +1,117 @@
+.msg-list__container {
+  position: relative;
+  background-color: #e5ddd5;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.msg-list__background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+
+  background-image: url('../../assets/images/chat-background.png');
+  background-repeat: repeat repeat;
+  background-size: 366.5px 666px;
+  opacity: 0.06;
+}
+.msg-list__body {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 90%;
+  margin: 0 auto;
+}
+.msg {
+  clear: both;
+  box-shadow: 0 1px 0.5px rgba(0,0,0,0.13);
+  z-index: 2;
+}
+.msg__start {
+  margin-top: 1em;
+}
+.msg__end {
+  margin-bottom: 1em;
+}
+.msg__from-self,
+.msg__from-recipient {
+  background-color: #dcf8c6;
+  border-radius: 7.5px;
+  max-width: 95%;
+  float: right;
+  padding: 8px;
+  margin: 0.25em 1em;
+  position: relative;
+}
+.msg__from-recipient {
+  background-color: #ffffff;
+  float: left;
+}
+.msg__from-self_starting {
+  border-top-right-radius: 0;
+  margin-top: 1em;
+}
+.msg__from-recipient_starting {
+  margin-top: 1em;
+  border-top-left-radius: 0;
+}
+
+.msg__header {
+  font-size: 12.5px;
+  line-height: 20px;
+  font-weight: 600;
+  color: #35cd96;
+  margin: 0.25em 0;
+}
+.msg__content {
+  font-size: 13.6px;
+  line-height: 19px;
+  word-wrap: break-word;
+  color: #262626;
+}
+.msg__tail_self,
+.msg__tail_recipient {
+  width: 12px;
+  height: 19px;
+  position: absolute;
+  right: -12px;
+  top: 0;
+
+  background-image: url('../../assets/images/msg-self-tail.png');
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.msg__tail_recipient {
+  background-image: url('../../assets/images/msg-recipient-tail.png');
+  right: auto;
+  left: -12px;
+}
+.msg__footer {
+  font-size: 11px;
+  color: rgba(0,0,0,0.45);
+  line-height: 15px;
+  text-align: right;
+  margin: 0.5em 0 0 0;
+}
+.msg__footer_tick {
+  width: 16px;
+  height: 15px;
+  vertical-align: top;
+  margin: 0 0 0 0.25em;
+}
+.msg__footer_tick-single {
+  background-image: url('../../assets/icons/single-tick.svg');
+}
+.msg__footer_tick-double {
+  background-image: url('../../assets/icons/double-tick-grey.svg')
+}
+.msg__footer_tick-double-blue {
+  background-image: url('../../assets/icons/double-tick-blue.svg')
+}

@@ -1,5 +1,5 @@
 export default {
-  contact_list: {
+  contactList: {
     A: [
       {
         name: 'Anjith sasindran',
@@ -28,6 +28,7 @@ export default {
       {
         name: 'Monica Geller',
         phone: '5876543210',
+        avatar: 'https://s-media-cache-ak0.pinimg.com/originals/e9/1d/e8/e91de8c297747194689d4848a35c87e5.jpg',
       },
     ],
     P: [
@@ -44,6 +45,7 @@ export default {
       {
         name: 'Rachel Green',
         phone: '2876543210',
+        avatar: 'http://images4.fanpop.com/image/photos/16100000/Rachel-Green-rachel-green-16164432-285-400.jpg',
       },
     ],
   },

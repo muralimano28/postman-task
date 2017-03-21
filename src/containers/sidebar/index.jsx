@@ -5,60 +5,14 @@ import Store from '../../store';
 import './style.css';
 
 import Compose from '../../components/compose';
-
-const Header = ({ avatar, name, clickComposeCB }) => (
-  <div className="header">
-    <div className="header__avatar">
-      <img className="header__avatar_img" src={avatar} alt={name} />
-    </div>
-    <div className="header__controls">
-      <button className="button button__compose-btn" onClick={clickComposeCB}>C</button>
-      <button className="button button__option-btn">O</button>
-    </div>
-  </div>
-);
-Header.propTypes = {
-  avatar: PropTypes.string,
-  name: PropTypes.string.isRequired,
-  clickComposeCB: PropTypes.func,
-};
-Header.defaultProps = {
-  avatar: null,
-  clickComposeCB: () => {},
-};
+import SiderbarContent from '../../components/sidebar-content';
+import Drawer from '../../components/drawer';
+import SidebarHeader from '../../components/sidebar-header';
 
 const Status = () => (
   <h2>I am Status</h2>
 );
-const Search = () => (
-  <h2>I am search bar</h2>
-);
-const ContactList = () => (
-  <h1>I am contactlist</h1>
-);
 
-const Drawer = ({ header, content, closeDrawerCB }) => (
-  <div className="drawer">
-    <header className="drawer__header">
-      <div className="drawer__header_controls">
-        <button className="button button_back-btn" onClick={closeDrawerCB}>B</button>
-      </div>
-      <div className="drawer__header_title-medium">{header}</div>
-    </header>
-    <div className="drawer__content">{content}</div>
-  </div>
-);
-
-Drawer.propTypes = {
-  header: PropTypes.string,
-  content: PropTypes.node,
-  closeDrawerCB: PropTypes.func,
-};
-Drawer.defaultProps = {
-  header: 'Drawer heading',
-  content: null,
-  closeDrawerCB: () => {},
-};
 export default class Sidebar extends Component {
   constructor(props) {
     super(props);
@@ -86,7 +40,7 @@ export default class Sidebar extends Component {
           heading: 'New chat',
           content: (
             <Compose
-              contacts={this.props.contact_list}
+              contacts={this.props.contactList}
               contactSelectCB={this.contactSelectHandler}
             />
           ),
@@ -117,17 +71,18 @@ export default class Sidebar extends Component {
       drawerContentType: 'COMPOSE_MSG',
     });
   }
-  contactSelectHandler = (phone) => {
+  contactSelectHandler = (value, isGroup) => {
     this.closeDrawerHandler();
     Store.dispatch({
-      type: 'ADD_NEW_THREAD',
-      value: phone,
+      type: 'SET_ACTIVE_CHAT',
+      value,
+      isGroup,
     });
   }
 
   render() {
     const { isOnline, showDrawer } = this.state;
-    const { avatar, name } = this.props;
+    const { avatar, name, threads, contactList, groups, id, activeChat } = this.props;
 
     let icon = null;
     let sidebarContent = null;
@@ -148,9 +103,18 @@ export default class Sidebar extends Component {
         />
       );
     } else {
+      let filteredContactList = [];
+      const alphabets = Object.keys(contactList);
+
+      for (let i = 0; i < alphabets.length; i += 1) {
+        filteredContactList = [
+          ...filteredContactList,
+          ...contactList[alphabets[i]],
+        ];
+      }
       sidebarContent = (
         <div>
-          <Header
+          <SidebarHeader
             avatar={avatar}
             name={name}
             clickComposeCB={this.clickComposeHandler}
@@ -164,8 +128,14 @@ export default class Sidebar extends Component {
               />
             )
           }
-          <Search />
-          <ContactList />
+          <SiderbarContent
+            msgThreads={threads}
+            contacts={filteredContactList}
+            groups={groups}
+            id={id}
+            onSelectingContact={this.contactSelectHandler}
+            activeChat={activeChat}
+          />
         </div>
       );
     }
@@ -180,12 +150,27 @@ export default class Sidebar extends Component {
 Sidebar.propTypes = {
   avatar: PropTypes.string,
   name: PropTypes.string.isRequired,
-  contact_list: PropTypes.objectOf(PropTypes.arrayOf(PropTypes.shape({
+  contactList: PropTypes.objectOf(PropTypes.arrayOf(PropTypes.shape({
     name: PropTypes.string,
     phone: PropTypes.string,
   }))),
+  threads: PropTypes.objectOf(PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string,
+    sender: PropTypes.string,
+    content: PropTypes.string,
+    type: PropTypes.oneOf(['TXT', 'IMG']),
+  }))),
+  groups: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string,
+    id: PropTypes.string,
+  })),
+  id: PropTypes.string.isRequired,
+  activeChat: PropTypes.string,
 };
 Sidebar.defaultProps = {
   avatar: null,
-  contact_list: {},
+  contactList: {},
+  threads: {},
+  groups: [],
+  activeChat: null,
 };

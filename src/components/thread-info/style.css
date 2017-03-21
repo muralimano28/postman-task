@@ -1,0 +1,78 @@
+.thread-info {
+  background: #ffffff;
+  cursor: pointer;
+  padding: 0;
+  /*border: 0;*/
+}
+.thread-info_active {
+  background: #e9ebeb;
+}
+.thread-info__link {
+  padding: 0.75em;
+  display: block;
+}
+.thread-info:last-child {
+  margin-bottom: 1.5em;
+}
+.thread-info:hover {
+  background: #f4f5f5;
+}
+.thread-info_active:hover {
+  background: #e9ebeb;
+}
+.thread-info__avatar-container {
+  display: inline-block;
+  width: 18%;
+  vertical-align: middle;
+}
+.thread-info__msg-container {
+  display: inline-block;
+  width: 80%;
+  vertical-align: middle;
+}
+.thread-info__avatar-container_avatar {
+  width: 49px;
+  height: 49px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.thread-info__recipient-name,
+.thread-info__msg-time {
+  display: inline-block;
+  vertical-align: middle;
+  width: 50%;
+  color: #000;
+}
+.thread-info__msg-time {
+  text-align: right;
+  color: rgba(0,0,0,0.4);
+  font-size: 12px;
+}
+.thread-info__recipient-info-container {
+  margin: 6px 0;
+}
+.thread-info__sender-name,
+.thread-info__msg-content {
+  font-size: 14px;
+  color: rgba(0,0,0,0.6);
+  vertical-align: middle;
+}
+.thread-info__sender-name::after {
+  content: ': ';
+}
+.thread-info__tick {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+.thread-info__tick_single {
+  background-image: url('../../assets/icons/single-tick.svg');
+}
+.thread-info__tick_double {
+  background-image: url('../../assets/icons/double-tick-grey.svg');
+  margin: 0 2px 0 0;
+}
+.thread-info__tick_double-blue {
+  background-image: url('../../assets/icons/double-tick-blue.svg');
+  margin: 0 2px 0 0;
+}

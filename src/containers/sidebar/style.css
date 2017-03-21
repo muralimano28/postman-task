@@ -1,35 +1,13 @@
 .sidebar {
   display: inline-block;
   vertical-align: top;
-  width: 100%;
+  /*width: 40%;*/
   height: 100vh;
-  max-width: 450px;
-  background: #f7f7f7;
+  min-width: 340px;
+  /*max-width: 450px;*/
+  background: #fefefe;
   color: #4b4b4b;
   border-right: 1px solid rgb(225, 222, 219);
-  overflow-y: scroll;
-}
-
-.drawer__header {
-  height: 108px;
-  background: #00bfa5;
-  color: #ffffff;
-  padding: 0 12px;
-  position: fixed;
-  top: 0;
-  right: 0;
-  left: 0;
-  width: 450px;
-  z-index: 1;
-}
-.drawer__content {
-  /*height: 83%;*/
-  margin-top: 108px;
-}
-.drawer__header_controls,
-.drawer__header_title-medium {
-  display: inline-block;
-  vertical-align: baseline;
-  margin-top: 60px;
-  font-size: 20px;
+  /*overflow-y: scroll;*/
+  flex: 1;
 }

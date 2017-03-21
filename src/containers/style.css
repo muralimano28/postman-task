@@ -1,24 +1,55 @@
+.application {
+  display: flex;
+}
 .header {
   height: 56px;
   background: #eeeeee;
-  padding: 8px;
+  padding: 8px 16px;
+  display: flex;
 }
 .header__avatar {
   width: 40px;
+  max-width: 40px;
   height: 40px;
   border-radius: 50%;
   overflow: hidden;
-  display: inline-block;
-  vertical-align: middle;
-  width: 10%;
+  /*display: inline-block;*/
+  /*vertical-align: middle;*/
+  /*flex: 1;*/
 }
 .header__avatar_img {
   width: 100%;
   height: auto;
 }
 .header__controls {
-  display: inline-block;
-  vertical-align: middle;
+  flex: 1;
+  /*display: inline-block;*/
+  /*vertical-align: middle;*/
   text-align: right;
-  width: 90%;
+  width: 85%;
+}
+.header__info {
+  flex: 5;
+  display: flex;
+  flex-direction: column;
+  margin: 0 1em;
+}
+.header__info-title {
+  flex: 1;
+  margin: 0;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 21px;
+  color: #000;
+  /*overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;*/
+}
+.header__info-recipients {
+  flex: 1;
+  margin: 0;
+  font-size: 13px;
+line-height: 18px;
+color: rgba(0,0,0,0.6);
+
 }

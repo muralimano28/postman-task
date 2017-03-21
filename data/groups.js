@@ -2,8 +2,8 @@ const groups = {
   groups: [
     {
       id: '6a7b8c9d0e',
-      name: 'Boys',
-      avatar: '',
+      name: 'Boys-Group',
+      avatar: 'https://s-media-cache-ak0.pinimg.com/236x/07/3a/68/073a68bd3baa42e22f57eb16f65ff8d3.jpg',
       recipients: [
         {
           id: '6876543210',
@@ -24,7 +24,7 @@ const groups = {
     },
     {
       id: '7a8b9c0d1e',
-      name: 'Friends',
+      name: 'Friends-Group',
       avatar: '',
       recipients: [
         {

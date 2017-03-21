@@ -1,0 +1,8 @@
+.sidebar-content__search-box {
+  background: #fbfbfb;
+}
+.sidebar-content__list {
+  background: #fefefe;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}

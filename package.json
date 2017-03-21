@@ -19,6 +19,7 @@
     "author": "Muralimanohar.P",
     "license": "ISC",
     "dependencies": {
+        "moment": "^2.17.1",
         "react": "15.3.0",
         "react-dom": "15.3.0",
         "redux": "^3.6.0"
