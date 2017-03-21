@@ -16,9 +16,12 @@ const ThreadInfo = ({
   senderName,
   onSelectingContact,
   className,
+  searchText,
 }) => {
   let tickClassName = '';
   const msgTime = TimingUtils(msg.sent_at);
+  let highLightedName = '';
+
   if (senderType === 'SELF') {
     if (msg.read_at) {
       tickClassName = 'double-blue';
@@ -29,9 +32,21 @@ const ThreadInfo = ({
     }
   }
 
+  if (searchText && searchText !== '') {
+    const pattern = new RegExp(`(${searchText})([.]*)`, 'gi');
+    highLightedName = name.replace(pattern, "<span class='hightlight'>$1</span>");
+
+    if (highLightedName === name) {
+      return null;
+    }
+  }
   return (
     <li className={`list thread-info ${(className) ? 'thread-info_' : ''}${className}`}>
-      <a className="thread-info__link" href="#/" onClick={(ev) => { ev.preventDefault(); onSelectingContact(recipientId, isGroup); }}>
+      <a
+        className="thread-info__link"
+        href="#/"
+        onClick={(ev) => { ev.preventDefault(); onSelectingContact(recipientId, isGroup); }}
+      >
         <div className="thread-info__avatar-container">
           <div className="thread-info__avatar-container_avatar">
             <img src={avatar} alt={name} />
@@ -39,7 +54,18 @@ const ThreadInfo = ({
         </div>
         <div className="thread-info__msg-container">
           <div className="thread-info__recipient-info-container">
-            <span className="thread-info__recipient-name">{name}</span>
+            {
+              (searchText && searchText !== '') ? (
+                /* eslint-disable */
+                <span
+                  className="thread-info__recipient-name"
+                  dangerouslySetInnerHTML={{ __html: highLightedName }}
+                />
+              /* eslint-enable */
+              ) : (
+                <span className="thread-info__recipient-name">{name}</span>
+              )
+            }
             <span className="thread-info__msg-time">{msgTime}</span>
           </div>
           <div className="thread-info__msg-info-container">
@@ -67,11 +93,13 @@ ThreadInfo.propTypes = {
   senderName: PropTypes.string,
   onSelectingContact: PropTypes.func.isRequired,
   className: PropTypes.string,
+  searchText: PropTypes.string,
 };
 ThreadInfo.defaultProps = {
   avatar: defaultProfilePic,
   senderName: null,
   className: '',
+  searchText: '',
 };
 
 export default ThreadInfo;

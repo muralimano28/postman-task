@@ -6,3 +6,13 @@
   overflow-y: scroll;
   overflow-x: hidden;
 }
+.sidebar-content__list_title {
+  height: 72px;
+  box-sizing: border-box;
+  font-size: 16px;
+  padding: 30px 0 15px 0;
+  padding-left: 26px;
+  color: #009688;
+  text-transform: uppercase;
+  background-color: white;
+}

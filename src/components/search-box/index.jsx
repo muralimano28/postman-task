@@ -16,6 +16,17 @@ class SearchBox extends Component {
   state = {
     isInputFocused: false,
   };
+  onKeyDownHandler = (ev) => {
+    if (ev.keyCode === 27) {
+      this.inputNode.blur();
+
+      this.setState({
+        isInputFocused: false,
+      });
+
+      this.props.onInputChange('');
+    }
+  }
   inputNode = null;
   focusInput = () => {
     this.inputNode.focus();
@@ -51,9 +62,10 @@ class SearchBox extends Component {
           <input
             className="input search-box__input"
             value={value}
-            onChange={(ev) => { onInputChange(ev.target.value); }}
+            onChange={(ev) => { onInputChange(ev.target.value.trim()); }}
             ref={(node) => { this.inputNode = node; }}
             onClick={() => { this.setState({ isInputFocused: true }); }}
+            onKeyDown={this.onKeyDownHandler}
           />
           {
             (value === undefined || value === null || value === '') ? null :

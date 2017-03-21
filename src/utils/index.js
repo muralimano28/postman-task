@@ -2,9 +2,7 @@ import Moment from 'moment';
 
 const TimingUtils = (milliSeconds, isForMsg) => {
   const date = new Date(parseInt(milliSeconds, 10));
-  // const momentObj = Moment(date).format('YYYYMMDD');
 
-  // return (isForMsg) ? Moment(date).format('h:mm A') : Moment(momentObj, 'YYYYMMDD').fromNow();
   return (isForMsg) ? Moment(date).format('h:mm A') : Moment(date).fromNow();
 };
 

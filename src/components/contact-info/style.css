@@ -1,0 +1,19 @@
+.contact-info {
+  padding: 0;
+}
+.contact-info__link {
+  display: flex;
+  padding: 1em;
+  text-decoration: none;
+  color: #000;
+}
+.contact-info__avatar-container {
+  width: 49px;
+  height: 49px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.contact-info__name {
+  flex: 1;
+  margin: 0.75em 1em;
+}

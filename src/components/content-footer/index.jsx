@@ -31,7 +31,7 @@ class ContentFooter extends Component {
 
 
   onKeyDownHandler = (ev) => {
-    if (ev.keyCode === 13) {
+    if (ev.keyCode === 13 && this.state.inputValue) {
       const { activeChat, userId, isGroup } = this.props;
       const { inputValue } = this.state;
 
